@@ -1,0 +1,26 @@
+use josalys
+db.createUser(
+  {
+    user: "ricardo",
+    pwd: "password",
+    roles: [ { role: "readWrite", db: "josalys" } ]
+  }
+)
+
+
+mongo --port 27017 -u "root" -p "example" --authenticationDatabase "admin"
+
+
+db.createUser(
+  {
+    user: "ricardo",
+    pwd: "1234",
+    roles: [ { role: "readWriteAnyDatabase", db: "josalys" } ]
+  }
+)
+
+
+db.createUser(
+{	user: "ricardo",
+	pwd: "password",
+	roles:[{role: "readWrite" , db:"josalys"}]})
